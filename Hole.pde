@@ -58,4 +58,18 @@ class Hole {
   public boolean hasMole() {
     return hasMole;
   }
+  
+  /**
+   * Determine if the given point is inside the hole or not
+   *
+   * @param x The first coordinate of the point
+   * @param y The second coordinate of the point
+   * @return true if the given point is inside the hole
+   */
+  public boolean isInside(float x, float y) {
+    float a = Math.abs(x - this.x); // the distance from the centre on x axis
+    float b = Math.abs(y - this.y); // the distance from the centre on y axis
+    double d = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)); // The distance from the centre
+    return d <= SIZE / 2; 
+  }
 }

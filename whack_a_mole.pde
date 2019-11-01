@@ -10,7 +10,8 @@ void setup() {
   size(600, 600);
   strokeWeight(2);
   // Create a two dimensional array with the centre of the holes
-  for(int i = 0; i < field.length; i++) {
+  holeCentres = new Coordinate[6][6];
+  for(int i = 0; i < holeCentres.length; i++) {
     Coordinate[] row = holeCentres[i];
     for(int j = 0; j < row.length; j++) {
       row[j] = new Coordinate(
@@ -41,5 +42,16 @@ void draw() {
 }
 
 void mouseClicked() {
-  
+  // Get the position of the nearest hole in the field
+  int i = pmouseX / (MARGIN + Hole.SIZE);
+  int j = pmouseY / (MARGIN + Hole.SIZE);
+  Hole near = field[i][j];
+  // Change the background of the clicked hole
+  if (near.isInside(pmouseX, pmouseY)) {
+    if (near.hasMole()) {
+      near.moleDisappear();
+    } else {
+      near.moleAppear();
+    }
+  }
 }
