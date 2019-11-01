@@ -1,6 +1,6 @@
 class Hole {
   
-  private static final int size = 25;
+  public static final int SIZE = 55;
   private float x;
   private float y;
   
@@ -31,7 +31,7 @@ class Hole {
   
   private void shapeHole(color background) {
     fill(background);
-    circle(x, y, size);
+    circle(x, y, SIZE);
   }
   
   public boolean hasMole() {
