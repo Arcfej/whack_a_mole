@@ -16,6 +16,7 @@ private int lastMole;
 
 void setup() {
   size(600, 600);
+  textSize(18);
   strokeWeight(2);
   // Create the playing field, initially all of them empty
   field = new Hole[FIELD_SIZE][FIELD_SIZE];
@@ -45,6 +46,8 @@ void draw() {
     field[int(random(FIELD_SIZE))][int(random(FIELD_SIZE))].moleAppear();
     lastMole = millis();
   }
+  fill(#000000);
+  text(score, 5, 25);
 }
 
 void mouseClicked() {
