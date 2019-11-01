@@ -33,4 +33,8 @@ class Hole {
     fill(background);
     circle(x, y, size);
   }
+  
+  public boolean hasMole() {
+    return hasMole;
+  }
 }
