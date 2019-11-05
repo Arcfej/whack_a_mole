@@ -52,7 +52,7 @@ class Hole {
    */
   private void shapeHole(color background) {
     fill(background);
-    circle(x, y, SIZE);
+    ellipse(x, y, SIZE, SIZE);
   }
   
   public boolean hasMole() {
