@@ -42,7 +42,7 @@ void draw() {
   }
   runningTime = millis();
   // Every second a mole appear on a random place
-  if (runningTime - lastMole >= 1000) {
+  if (runningTime - lastMole >= 500) {
     for(int i = 0; i < randomGaussian() * 3 + 1; i++) {
       field[int(random(FIELD_SIZE))][int(random(FIELD_SIZE))].moleAppear();
     }
